@@ -6,7 +6,6 @@ var booksContainer = [];
 if (localStorage.getItem("Books") != null) {
   booksContainer = JSON.parse(localStorage.getItem("Books"));
   displayBooks(booksContainer);
-  // localStorage.removeItem("Books");
 }
 
 function addBook() {
@@ -17,7 +16,6 @@ function addBook() {
 
   var count = 0;
   for (var i = 0; i < booksContainer.length; i++) {
-    // console.log(booksContainer[i].bookNameValue !== BookmarkInput.value);
     if (booksContainer[i].bookNameValue === BookmarkInput.value) {
       count++;
       alert("book name is already stored");
@@ -28,8 +26,7 @@ function addBook() {
   }
   localStorage.setItem("Books", JSON.stringify(booksContainer));
   displayBooks(booksContainer);
-
-  // clearForm();
+  clearForm();
 }
 
 function deleteBook(itemIndex) {
